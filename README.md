@@ -6,7 +6,7 @@
 ## Step 2
 
 	 require 'webtoken'
-	 
+
 ## Step 3
  
    data = WebToken::MakeToken.new( user_id )
@@ -18,7 +18,7 @@
     #sample = {"eyJhbGciOiJub25lIn0.eyJkYXRhIjp7InVzZXJpZCI6ImpodiIsImRhdGUiOiIyMDE4LTA1LTI1IiwidGltZSI6IjIwMTgtMDUtMjUgMTI6Mzk6MzIgKzA1MzAifX0."}
 
 
-## Step 3
+## Step 4
 
     validate_token = WebToken::WebtokenValidate.new
 
