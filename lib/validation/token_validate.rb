@@ -6,9 +6,6 @@ require "date"
 module WebToken
 
 	class WebtokenValidate
-		# def initialize( token, model )
-			
-		# end
 		def validate( token )
 			begin
 				decoded_token = JWT.decode token, nil, false
@@ -20,21 +17,10 @@ module WebToken
 			if decoded_token.present?
 				@data = decoded_token[0]['data'] 
 				time = @data['time'].to_time+ 1.hour > Time.now	
-				if time 
-					@data
-				else
-					false
-				end
+				time ? @data : false
 			else
 				false
 			end
-
-			 # user = Kernel.const_get(@model).find(@data['userid'].to_i)
-			 # if user.present? && time
-			 # 	user
-			 # else
-			 # 	return false
-			 # end
 		end
 
 	end
